@@ -10,14 +10,16 @@ def Caesar_Encryption(str, offset) :
     """
     upper_limit = ord('~')
     lower_limit = ord(' ')
-    length = upper_limit - lower_limit                # 超出時應縮減的固定長度
+    length = upper_limit - lower_limit                # 超出上限時應縮減的固定長度
     i = 0
     newStr = ""
     newASCii = 0
     while i < len(str) - 1 :
-        newASCii = ord(str[i]) + offset                # 未超出時
-        if newASCii > upper_limit:                     # 超出時
+        newASCii = ord(str[i]) + offset                # 未超出上限
+        if newASCii > upper_limit:                     # 超出上限時
             newASCii -=  length                        # 縮減固定長度
+        # 以上作法僅限於offset <= length
+        # 若offset > length, 應該改用%取餘數
         newStr += chr(newASCii)
         i += 1
 
@@ -32,18 +34,16 @@ def Caesar_Decryption(str, offset) :
     """
     upper_limit = ord('~')
     lower_limit = ord(' ')
+    length = upper_limit - lower_limit                # 低於下限時應增加的固定長度
     i = 0
     newStr = ""
     newASCii = 0
     while i < len(str) - 1 :
-        if ord(str[i]) - offset < lower_limit :
-            newASCii = ord(str[i]) - offset
-            newASCii = lower_limit - newASCii
-            newASCii -= 1
-            newASCii = upper_limit - newASCii
-        else :
-            newASCii = ord(str[i]) - offset
-
+        newASCii = ord(str[i]) - offset                # 未低於下限
+        if newASCii < lower_limit:                     # 低於下限時
+            newASCii +=  length                        # 增加固定長度
+        # 以上作法僅限於offset <= length
+        # 若offset > length, 應該改用%取餘數
         newStr += chr(newASCii)
         i += 1
 
