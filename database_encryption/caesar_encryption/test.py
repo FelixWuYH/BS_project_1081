@@ -1,4 +1,5 @@
 # 資訊二甲 10627109 陳力維 2019/7/24
+# 資訊二乙 10627229 陳寬祐 
 import random
 import string
 
