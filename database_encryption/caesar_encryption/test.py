@@ -11,7 +11,6 @@ def Caesar_Encryption(str, offset) :
     upper_limit = ord('~')
     lower_limit = ord(' ')
     length = upper_limit - lower_limit                # 超出上限時應縮減的固定長度
-    print(length)
     i = 0
     newStr = ""
     newASCii = 0
