@@ -11,16 +11,18 @@ def Caesar_Encryption(str, offset) :
     """
     upper_limit = ord('~')
     lower_limit = ord(' ')
-    length = upper_limit - lower_limit                # 超出上限時應縮減的固定長度
+    length = upper_limit - lower_limit                  # 有效符號區間'~'到' '數量
     i = 0
     newStr = ""
     newASCii = 0
     while i < len(str) - 1 :
-        newASCii = ord(str[i]) + offset                # 未超出上限
-        if newASCii > upper_limit:                     # 超出上限時
-            newASCii -=  length                        # 縮減固定長度
-        # 以上作法僅限於offset <= length
-        # 若offset > length, 應該改用%取餘數
+        newASCii = ord(str[i]) + offset                 # 先把新的ASCii碼算出來放著
+        if newASCii > upper_limit :         
+            #若是新的ASCii碼超出範圍，還要分兩種case去處理，偏移量offset若大於有效符號區間length，表示新的ASCii碼
+            #至少需要減去兩次length才能得到想要的值，反之offset若小於等於length，只要將newASCii減去一次區間即可
+            while not newASCii <= upper_limit :         #用一個迴圈減length直到newASCii到有效區間
+                newASCii -= length
+
         newStr += chr(newASCii)
         i += 1
 
@@ -35,16 +37,17 @@ def Caesar_Decryption(str, offset) :
     """
     upper_limit = ord('~')
     lower_limit = ord(' ')
-    length = upper_limit - lower_limit                # 低於下限時應增加的固定長度
+    length = upper_limit - lower_limit                  # 有效符號區間'~'到' '數量
     i = 0
     newStr = ""
     newASCii = 0
     while i < len(str) - 1 :
-        newASCii = ord(str[i]) - offset                # 未低於下限
-        if newASCii < lower_limit:                     # 低於下限時
-            newASCii +=  length                        # 增加固定長度
-        # 以上作法僅限於offset <= length
-        # 若offset > length, 應該改用%取餘數
+        newASCii = ord(str[i]) - offset                 # 先把新的ASCii碼算出來放著
+        if newASCii < lower_limit :
+        #若是newASCii低於lower_limit，代表超出了有效符號區間，newASCii < 32，這是得再細分兩種情況，若offset > length，表示
+        #newASCii至少要加兩次以上length才能到達有效區間，反之offset若小於等於length，只要將newASCii加上一次length即可
+            while not newASCii >= lower_limit :         #用一個迴圈加length直到newASCii到有效區間
+                newASCii += length
         newStr += chr(newASCii)
         i += 1
 
