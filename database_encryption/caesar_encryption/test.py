@@ -147,7 +147,8 @@ while True :
             filename = input("input a filename : ")
             if filename == "0" :
                 break
-            file = open(filename + ".txt", "r")
+            file = open(filename + ".txt", "r",encoding='UTF-8')
+            # encoding='UTF-8': retrieve BIG5 text
             if file :
                 break
 
@@ -157,13 +158,15 @@ while True :
         offset = input("enter a offset : ")
         offset = int(offset)
         if number == '1' :
-            encrypt = open("encrypted.txt", "w")
+            encrypt = open("encrypted.txt", "w",encoding='UTF-8')
+            # encoding='UTF-8': retrieve BIG5 text
             while line :
                 encrypt.write(Caesar_Encryption(line, offset) + '\n')
                 line = file.readline()
             encrypt.close()
         else :
-            decrypt = open("decrypted.txt", "w")
+            decrypt = open("decrypted.txt", "w",encoding='UTF-8')
+            # encoding='UTF-8': retrieve BIG5 text
             while line :
                 decrypt.write(Caesar_Decryption(line, offset) + '\n')
                 line = file.readline()
