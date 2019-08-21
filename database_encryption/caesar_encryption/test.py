@@ -17,9 +17,14 @@ def Caesar_Encryption(str, offset) :
     while i < len(str) - 1 :
         newASCii = ord(str[i]) + offset                # 未超出上限
         if newASCii > upper_limit:                     # 超出上限時
-            newASCii -=  length                        # 縮減固定長度
+            if offset <= length :
+                newASCii -=  length                        # 縮減固定長度
         # 以上作法僅限於offset <= length
         # 若offset > length, 應該改用%取餘數
+            else :
+                newASCii -= lower_limit 			#減去前半段
+                newASCii %= length				#取餘數
+                newASCii += lower_limit				#加回去
         newStr += chr(newASCii)
         i += 1
 
