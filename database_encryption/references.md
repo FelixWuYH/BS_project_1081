@@ -11,22 +11,22 @@
 - https://read01.com- - /zh-tw/RLMMgg.html#.XV0em-gzZP- Y
 
 # Tools #
-- [1] hashlib — Secure hashes and message digests.
+> [1] hashlib — Secure hashes and message digests.
 - https://docs.python.org/3/library/hashlib.html
-- [2] pyDes
+> [2] pyDes
 - https://pypi.org/project/pyDes/
-- [3] MySQL ENCRYPT() function
+> [3] MySQL ENCRYPT() function
 - https://www.w3resource.com/mysql/encryption-and-compression-functions/encrypt().php
 
 # Bibliography #
-- [1] Database encryption wiki.
+> [1] Database encryption wiki.
 - https://en.wikipedia.org/wiki/Database_encryption
 
-- [2] Luc Bouganim, Yanli Guo. Database encryption. S. Jajodia and H. van Tilborg. Encyclopedia of Cryptography and Security, Springer, pp.1-9, 2009.
+> [2] Luc Bouganim, Yanli Guo. Database encryption. S. Jajodia and H. van Tilborg. Encyclopedia of Cryptography and Security, Springer, pp.1-9, 2009.
 - https://hal.archives-ouvertes.fr/hal-00623915/document
 
-- [3] Database Security and Encryption: A Survey Study, International Journal of Computer Applications (0975 – 888), Volume 47– No.12, June 2012.
+> [3] Database Security and Encryption: A Survey Study, International Journal of Computer Applications (0975 – 888), Volume 47– No.12, June 2012.
 - http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.258.8172&rep=rep1&type=pdf
 
-- [4] Encrypting Analytical Web Applications, CCSW’16, October 28 2016.
+> [4] Encrypting Analytical Web Applications, CCSW’16, October 28 2016.
 - http://www.fkerschbaum.org/ccsw16b.pdf
