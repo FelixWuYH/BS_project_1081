@@ -5,7 +5,7 @@
 - https://www.itread01.com/content/1544480658.html
 > [3] Python 的 SHA-256 以及 AES-256 CBC 程式範例.
 - https://samkuo.me/- po- st/2015/09/python-aes-256-and-sha-256-examples/
-> [4] python基於pyDe- s- 庫實現des加密的方法.
+> [4] python基於pyDes實現des加密的方法.
 - https://www.itread- 0- 1.com/p/528309.html
 > [5] Python+MySQL用- - 戶加密存儲驗證系統.
 - https://read01.com- - /zh-tw/RLMMgg.html#.XV0em-gzZP- Y
