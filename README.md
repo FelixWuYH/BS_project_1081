@@ -3,6 +3,6 @@
  
 ## 1st goal #
 _get familiar with GitHub collaboration by working together on a sample program._
-- Team 1: /card_game/twentyone.py
-- Team 2: /database_encryption/caesar_encryption/test.py
-- Team 3: /card_game_II/card.py
+- /team1/card_game/twentyone.py
+- /team2/database_encryption/caesar_encryption/test.py
+- /team3/card_game/card.py
