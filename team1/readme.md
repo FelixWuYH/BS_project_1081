@@ -31,5 +31,7 @@
 - http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.258.8172&rep=rep1&type=pdf
 > [5] Designing Secure Indexes for Encrypted Databases, Data and Applications Security, 2005.
 - https://link.springer.com/content/pdf/10.1007/11535706_5.pdf
-> [5] Encrypting Analytical Web Applications, CCSW’16, October 28 2016.
+> [6] A New Method of Query over Encrypted Data in Database using Hash Map, International Journal of Computer Applications((0975–8887), Volume 41– No.4, June 2012.
+- https://pdfs.semanticscholar.org/8b38/42bec79a15817d1782326661085aeea48482.pdf
+> [7] Encrypting Analytical Web Applications, CCSW’16, October 28 2016.
 - http://www.fkerschbaum.org/ccsw16b.pdf
