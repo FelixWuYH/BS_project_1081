@@ -9,6 +9,8 @@
 - https://www.itread- 0- 1.com/p/528309.html
 > [5] Python+MySQL用- - 戶加密存儲驗證系統.
 - https://read01.com- - /zh-tw/RLMMgg.html#.XV0em-gzZP- Y
+> [6] Optimizing Protected Indexes (was Indexing Encrypted Data)
+- https://wateroxconsulting.com/archives/optimizing-protected-indexes/
 
 # Tools #
 > [1] hashlib — Secure hashes and message digests.
