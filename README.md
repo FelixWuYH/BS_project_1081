@@ -9,5 +9,5 @@ _get familiar with GitHub collaboration by working together on a sample program.
 ## 專題相關工具 ##
 ![工具列表](./img/tools.jpg "Helpful tools!")
 - Trello, [如何活用 Trello 專案管理？完整技巧案例教學一次學會懶人包](https://www.playpcesor.com/2019/03/trello.html).
-- Slack, https://www.playpcesor.com/2015/06/slack.html
-- Docker, https://philipzheng.gitbooks.io/docker_practice/content/install/centos.html
+- Slack, [如何活用 Trello 專案管理？完整技巧案例教學一次學會懶人包](https://www.playpcesor.com/2015/06/slack.html).
+- Docker, [如何活用 Trello 專案管理？完整技巧案例教學一次學會懶人包](https://philipzheng.gitbooks.io/docker_practice/content/install/centos.html).
