@@ -57,7 +57,7 @@ def Caesar_Decryption(str, offset) :
 
 def Initialize_Passcode() :
     """
-
+    :return : string
     """
     length = Password_length()
     upper_case = False
@@ -114,9 +114,13 @@ def Initialize_Passcode() :
         while i < length :
             temp += random.sample(words, 1)
             i += 1
-        print(temp)
+            print(temp)
+            password = temp
+            return password
     else :
-        print( ''.join(random.sample(words, length)))
+        password = ''.join(random.sample(words, length))
+        print( password)
+        return password
 
 def Password_length() :
     """
@@ -134,6 +138,41 @@ def Password_length() :
             return length
         else :
             print("!!! You enter a wrong length of passcode. !!!")
+            
+def Password_Strengh(password):
+    """
+    :parameter password : string
+    """
+    i = 0
+    strengh_level = 0
+    for letter in password:
+        if letter.isupper():
+            strengh_level += 1
+            break
+
+    for letter in password:
+        if letter.islower():
+            strengh_level += 1
+            break
+
+    for letter in password:
+        if letter.isdigit():
+            strengh_level += 1
+            break
+        
+    for letter in password:
+        if ord(letter) == 95:
+            strengh_level += 1
+            break
+            
+    for i  in range (len(password)):
+        j = 0
+        for j  in range (len(password)) :
+            if password[i] == password[j] :
+                if i != j :
+                    strengh_level += 1
+            
+    print("The password strengh level is level " , strengh_level)
 
 number = 0
 while True :
@@ -175,7 +214,8 @@ while True :
         file.close()
 
     elif number == '3' :
-        Initialize_Passcode()
+        password = Initialize_Passcode()
+        Password_Strengh(password)
 
     elif number == '0' :
         break
