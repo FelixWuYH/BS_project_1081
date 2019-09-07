@@ -1,6 +1,0 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-name = "Johnson"
-print("Hello Im", name)
