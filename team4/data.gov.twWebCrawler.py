@@ -6,9 +6,11 @@ WebCrawler抓老師指定網站 政府開放資料平台
 """
 
 import urllib.request as req #載入模組並設定別名
+from urllib.request import urlopen
 import urllib
 import bs4 # 爬蟲分析
 import re # #字串.數字的操控
+
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@連線到第一層網頁"https://data.gov.tw/"
 url="https://data.gov.tw/" #政府公開資料平台網址
 
@@ -73,7 +75,7 @@ for href in hrefList : # 跑完所有的方塊
     MAXpage = MAXnum // 15 # 總頁數
     #----------------以上能得知 一個方塊中共有多少資料 每頁15筆
    
-    
+    count = 0
     k=0
     while k <= MAXpage : #將此方塊的第一頁到最後一頁都跑過  if maxpage = 33 那網頁連結為 0到 33 1~34頁
         
@@ -116,46 +118,63 @@ for href in hrefList : # 跑完所有的方塊
             print("***********最終資料下載頁面*********")
             print(root.title.string) #印出整個網頁的大標題
             
-            finalUrl = root.find("a", class_="dgresource ff-icon ff-icon-csv") #使用find找尋csv檔
+            finalUrl = root.find("a", class_= "dgresource ff-icon ff-icon-csv") #使用find找尋csv檔
+            fileName = str(count) + ".csv"
             if (finalUrl == None ):
                 finalUrl = root.find("a", class_="dgresource ff-icon ff-icon-壓縮檔") #使用find找尋壓縮檔
             if (finalUrl == None) :
                 finalUrl = root.find("a",class_="dgresource ff-icon ff-icon-ods") #使用find找尋ods檔
+                fileName = root.title.string + ".ods"    
             if (finalUrl == None) :
                 finalUrl = root.find("a",class_="dgresource ff-icon ff-icon-json") #使用find找尋json檔               
+                fileName = root.title.string + ".json"
             if (finalUrl == None) :
                 finalUrl = root.find("a",class_="dgresource ff-icon ff-icon-xls") #使用find找尋xls檔    
+                fileName = root.title.string + ".xls"
             if (finalUrl == None) :
                 finalUrl = root.find("a", class_="dgresource ff-icon ff-icon-txt" ) #使用find找尋TXT檔  
+                fileName = root.title.string + ".txt"
             if (finalUrl == None) :
                 finalUrl = root.find("a", class_="dgresource ff-icon ff-icon-zip" ) #使用find找尋zip檔   
+                fileName = root.title.string + ".zip"
             if (finalUrl == None) :
                 finalUrl = root.find("a", class_="dgresource ff-icon ff-icon-xml" ) #使用find找尋xml檔   
+                fileName = root.title.string + ".xml"
             if (finalUrl == None) :
                 finalUrl = root.find("a", class_="dgresource ff-icon ff-icon-pdf" ) #使用find找尋pdf檔    
+                fileName = root.title.string + ".pdf"
             if (finalUrl == None) :
                 finalUrl = root.find("a", class_="dgresource ff-icon ff-icon-xlsx" ) #使用find找尋xlsx檔                 
+                fileName = root.title.string + ".xlsx"
             if (finalUrl == None) :
                 finalUrl = root.find("a", class_="dgresource ff-icon ff-icon-doc" ) #使用find找尋doc檔                  
+                fileName = root.title.string + ".doc"    
                 
                 
                 
                 
-                
-                
-                
-                
+              
                 
             finall = finalUrl.get('href')
             print("進入此連結可下載資料" , end='')
             print(finall)
+        
+            for ch in finall:
+                if u'\u4e00' <= ch <= u'\u9fff': 
+                    finall = urllib.parse.quote(finall, safe='/:?=')
+                    print(finall)
+                    break
+                
+            '''       
+            headers = {"User-Agent":" Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36"}
+            req = urllib.request.Request(finall,headers=headers)
+            data = urllib.request.urlopen(req).read().decode("utf-8")
+            '''
+
+            urllib.request.urlretrieve(finall, fileName)
+                    
+            count+=1
             
-            '''不太會
-            request4 = req.Request(finall,headers={  # 連線到每個小分頁
-            "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36"
-            })
-            urllib.urlretrieve("finall","1")
-            不太會'''
         #for迴圈結束
         
         k+=1 #下一頁
