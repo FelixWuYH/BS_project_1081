@@ -10,7 +10,7 @@ def Caesar_Encryption(str, offset) :
     :parameter offset : int
     :return : string
     """
-    upper_limit = ord('~')
+    upper_limit = 65308
     lower_limit = ord(' ')
     length = upper_limit - lower_limit                  # 有效符號區間'~'到' '數量
     i = 0
@@ -36,7 +36,7 @@ def Caesar_Decryption(str, offset) :
     :parameter offset : int
     :return : string
     """
-    upper_limit = ord('~')
+    upper_limit = 65308
     lower_limit = ord(' ')
     length = upper_limit - lower_limit                  # 有效符號區間'~'到' '數量
     i = 0
