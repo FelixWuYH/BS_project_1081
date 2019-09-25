@@ -4,5 +4,5 @@
 > [2] GitHub API.
 - https://developer.github.com/v3/
 - https://developer.github.com/v4/
-> [3] (c) GitHub Archive. 
+> [3] GitHub Archive. 
 - https://www.gharchive.org/
