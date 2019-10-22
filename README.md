@@ -14,3 +14,8 @@ _get familiar with GitHub collaboration by working together on a sample program.
 - Conda, [用conda建立及管理python虛擬環境](https://medium.com/python4u/用conda建立及管理python虛擬環境-b61fd2a76566).
 - Slack, [Slack 完整教學與上手心得：找到正確的團隊溝通之道](https://www.playpcesor.com/2015/06/slack.html).
 - Docker, [Docker —— 從入門到實踐](https://philipzheng.gitbooks.io/docker_practice/content/install/centos.html).
+## 分組倉庫 ##
+1. [RSA加解密方法](https://github.com/newyear2580/project_RSA).
+2. [醫藥資訊檢索平台](https://github.com/JanineKuo/Team2).
+3. [個人化餐飲(及運動)分析師App](???).
+4. [中原大學即時資訊助手](???).
